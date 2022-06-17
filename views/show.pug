@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    style
+      include ../style.css
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/"> Home</a></li>
+            <li><a href="/delete"> Delete</a></li>
+            <li><a href="/view">View</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>This is Gym Form</h2>
+        <div id="output">
+            <p class="name">Name: <span id="name_text"></span> </p>
+            <p class="age">age: <span id="age_text"></span> </p>
+            <p class="email">email: <span id="email_text"></span> </p>
+            <p class="address">address: <span id="address_text"> </span> </p>
+        </div>
+        
+    </div>
+    <script>
+        getfunc();
+         function getfunc(){
+            const response= await fetch('/view');
+            const data=await response.json();
+            let text=document.getElementById('output');
+            // text.textContent=data;
+            // for(item of data) {
+            //     let name=document.getElementById(name_text);
+            //     let age=document.getElementById(age_text);
+            //     let email=document.getElementById(email_text);
+            //     let address=document.getElementById(address_text);
+            //     name.textContent=item.Name;
+            //     email.textContent=`${item.Email}`;
+            //     address.textContent=`${item.Address}`;
+            //     age.textContent=`${item.Age}`;
+            // };
+        }
+    </script>
+    </body>
+</html>
+<!-- https://gist.github.com/prof3ssorSt3v3/7cf96e740e470ab87bfa637faeb7a83b -->
+<!-- link for form making -->
